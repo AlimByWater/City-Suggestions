@@ -1,0 +1,110 @@
+body{
+  margin-right:80px;
+  margin-left:80px;
+}
+.group{  
+    position:fixed;
+    top:40%;
+    left: 50%;
+    
+    transform: translate(-50%, -40%);
+    margin-bottom:auto;
+    }
+input{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+
+    font-size:28px;
+    padding:10px 100px 10px 7px;
+    display:block;
+    width:400px;
+    border:none;
+    
+    border-bottom:1px solid #757575; /* Нижняя линия до активации */
+}
+
+input:focus{ outline:none; }
+
+/*========= BOTOM BAR =========*/
+.bar  { position:relative; display:block; width:400px;}
+.bar:before, .bar:after   {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:0px; 
+  position:absolute;
+  background:#1F6373; /* Нижняя линия во время активации */
+  transition:0.6s ease all; 
+  
+}
+.bar:before {
+  left:63%;
+}
+.bar:after {
+  right:36%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:64%;
+}
+
+/*========= LABEL CUST. =========*/
+label{
+    color:#999; /* Цвет текста до активации */
+    font-size:28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:-5px;
+    transition:0.2s ease all; 
+}
+
+input:focus ~ label, input:valid ~ label     {
+  top:-20px;
+  font-size:16px;
+  color:#1F6373; /* Цвет теккста во время активации */
+  transition:0.3s ease all;
+}
+
+/*========= BOX ==========*/
+.box{
+   
+   position: absolute;
+   margin-top:10px;
+   margin-left: 10px;
+   transition: 0.5s ease all;
+}
+.box > ul{
+   list-style-type: none;
+   border-right: 50%;
+
+}
+
+.box > ul > li{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-left: -40px;
+  padding:10px 5px;
+  font-size:18px;
+  color: black; /* Цвет текста в подсказках */
+  list-style-type: none;
+}
+.box > ul > li:hover{
+  
+  background:#F2F2F2; /* Цвет бэкграунда текста в подсказках */
+}
+
+.ui-helper-hidden-accessible {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+}
